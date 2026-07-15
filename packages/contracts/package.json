@@ -1,0 +1,18 @@
+{
+  "name": "@halaal/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HalaalCertification ERC-721 smart contract (Polygon)",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "5.0.2",
+    "hardhat": "^2.22.10",
+    "typescript": "^5.7.3"
+  }
+}

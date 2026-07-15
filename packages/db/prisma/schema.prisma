@@ -1,0 +1,252 @@
+// Halaal Platform — Prisma schema
+// Off-chain state (PostgreSQL). On-chain state lives in HalaalCertification.sol.
+// PII that must be erasable (GDPR/POPIA) is stored here, NOT on-chain; the
+// contract anchors only a keccak256 `businessDataHash` commitment.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrgType {
+  BODY
+  BUSINESS
+}
+
+enum UserRole {
+  ADMIN
+  CERTIFIER
+  BUSINESS
+  CONSUMER
+}
+
+enum AppStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  AUDIT_SCHEDULED
+  AUDIT_COMPLETE
+  APPROVED
+  MINTING
+  MINTED
+  REJECTED
+  REVOKED
+}
+
+enum VirusScanStatus {
+  PENDING
+  CLEAN
+  INFECTED
+  ERROR
+}
+
+enum FraudReportStatus {
+  OPEN
+  REVIEWING
+  RESOLVED
+  DISMISSED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+model Organisation {
+  id          String   @id @default(cuid())
+  name        String
+  type        OrgType
+  countryCode String // ISO 3166-1 alpha-2
+  website     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  users                User[]
+  businessApplications Application[] @relation("BusinessApplications")
+  bodyApplications     Application[] @relation("BodyApplications")
+
+  @@index([type])
+  @@index([countryCode])
+}
+
+model User {
+  id            String   @id @default(cuid())
+  orgId         String
+  email         String   @unique
+  passwordHash  String?
+  role          UserRole
+  walletAddress String?  @unique // required for CERTIFIER (on-chain signing)
+  displayName   String?
+  verified      Boolean  @default(false)
+  twoFactorSecret String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  org           Organisation  @relation(fields: [orgId], references: [id])
+  auditTasks    AuditTask[]
+  auditLogs     AuditLog[]
+  notifications Notification[]
+
+  @@index([orgId])
+  @@index([role])
+}
+
+model Application {
+  id            String    @id @default(cuid())
+  businessOrgId String    @default("unattached")
+  bodyOrgId     String    @default("unattached")
+  status        AppStatus @default(DRAFT)
+  categoryId    String    @default("")
+  standard      String    @default("")
+  productLine   String
+
+  // Off-chain business identity + erasable PII (anchored on-chain via businessDataHash)
+  businessName       String
+  registrationNumber String
+  physicalAddress    String?
+  contactEmail       String?
+  businessDataHash   String? // keccak256 commitment written on mint
+
+  submittedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  businessOrg Organisation @relation("BusinessApplications", fields: [businessOrgId], references: [id])
+  bodyOrg     Organisation @relation("BodyApplications", fields: [bodyOrgId], references: [id])
+  documents   Document[]
+  auditTasks  AuditTask[]
+  certificate Certificate?
+  payment     Payment?
+
+  @@index([businessOrgId])
+  @@index([bodyOrgId])
+  @@index([status])
+  @@index([registrationNumber])
+}
+
+model Document {
+  id              String          @id @default(cuid())
+  applicationId   String
+  s3Key           String
+  ipfsCid         String?
+  hash            String? // keccak256 of file
+  mimeType        String
+  sizeBytes       Int
+  virusScanStatus VirusScanStatus @default(PENDING)
+  uploadedBy      String
+  createdAt       DateTime        @default(now())
+
+  application Application @relation(fields: [applicationId], references: [id])
+
+  @@index([applicationId])
+}
+
+model AuditTask {
+  id            String    @id @default(cuid())
+  applicationId String
+  auditorUserId String
+  scheduledDate DateTime?
+  completedAt   DateTime?
+  checklistJson Json?
+  gpsLat        Float?
+  gpsLng        Float?
+  attestationSig String? // EIP-712 auditor signature
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  application Application @relation(fields: [applicationId], references: [id])
+  auditor     User        @relation(fields: [auditorUserId], references: [id])
+
+  @@index([applicationId])
+  @@index([auditorUserId])
+}
+
+// Mirrors on-chain Certificate; on-chain is source of truth for status.
+model Certificate {
+  id            String    @id @default(cuid())
+  tokenId       Int       @unique
+  applicationId String    @unique
+  category      String
+  standard      String
+  countryCode   String
+  auditorName   String
+  issuedAt      DateTime
+  expiresAt     DateTime
+  revokedAt     DateTime?
+  supersededBy  Int? // newTokenId if renewed
+  previousTokenId Int?
+  renewalCount  Int       @default(0)
+  polygonTxHash String?
+  ipfsCid       String
+  auditDocHash  String
+  tokenUri      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  application Application @relation(fields: [applicationId], references: [id])
+
+  @@index([tokenId])
+}
+
+model Notification {
+  id      String   @id @default(cuid())
+  userId  String
+  type    String
+  channel String // email | push | in-app
+  sentAt  DateTime?
+  read    Boolean  @default(false)
+  payload Json
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  actorId      String?
+  action       String
+  resourceType String
+  resourceId   String
+  ip           String?
+  userAgent    String?
+  metadata     Json?
+  timestamp    DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id])
+
+  @@index([resourceType, resourceId])
+  @@index([actorId])
+}
+
+model FraudReport {
+  id            String            @id @default(cuid())
+  tokenId       Int
+  reporterEmail String?
+  description   String
+  status        FraudReportStatus @default(OPEN)
+  createdAt     DateTime          @default(now())
+
+  @@index([tokenId])
+  @@index([status])
+}
+
+model Payment {
+  id                    String        @id @default(cuid())
+  applicationId         String        @unique
+  stripePaymentIntentId String?
+  amount                Int // minor units
+  currency              String
+  status                PaymentStatus @default(PENDING)
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  application Application @relation(fields: [applicationId], references: [id])
+}

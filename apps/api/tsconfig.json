@@ -8,10 +8,7 @@
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "outDir": "dist",
-    "paths": {
-      "@halaal/db": ["../../packages/db/src/index.ts"]
-    }
+    "outDir": "dist"
   },
   "include": ["src/**/*.ts"]
 }

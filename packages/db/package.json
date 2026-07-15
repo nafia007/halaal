@@ -17,7 +17,7 @@
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "generate": "prisma generate",
     "validate": "prisma validate",
     "migrate": "prisma migrate dev",

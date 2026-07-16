@@ -7,6 +7,17 @@ Certification Bodies, Businesses, Auditors, and Consumers.
 > Status: **Phase 0 + Verify slice scaffolded and verified end-to-end.**
 > See the PRD (`halaal-prd.md`) for full requirements.
 
+## Deploying to Vercel
+
+This is a monorepo. The Next.js web app lives in `apps/web` and is the app that
+gets deployed. **Set the Vercel project Root Directory to `apps/web`** (Settings →
+General → Root Directory). Vercel will then read `apps/web/vercel.json` and build
+only the web app (`npm run build`, output `apps/web/.next`).
+
+Do **not** deploy from the repo root — that would pull in `packages/db` (Prisma),
+which is not part of the web runtime and will crash with
+`@prisma/client did not initialize yet`.
+
 ## Layout
 
 ```

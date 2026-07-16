@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npx turbo run build --filter=@halaal/web",
+  "outputDirectory": "apps/web/.next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "ignoreCommand": "npx turbo-ignore"
+}

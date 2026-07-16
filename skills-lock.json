@@ -1,0 +1,347 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-gateway": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/ai-gateway/SKILL.md",
+      "computedHash": "7e29de30c6a55cbd343ee4aabfa7b909a0b2daf1a0ca9a9e437ec8928d4cc801"
+    },
+    "ai-sdk": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/ai-sdk/SKILL.md",
+      "computedHash": "bf4a80dc8c1e0e2557af681714b063a92de2fa3ac8f425c2f8c225b15ca4b893"
+    },
+    "auth": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/auth/SKILL.md",
+      "computedHash": "eaa5552ba445c83a4d51f1e20f232d631dfde4429aaa1a3f8f8168d05ba4e5b9"
+    },
+    "benchmark-agents": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/benchmark-agents/SKILL.md",
+      "computedHash": "7aa44bf0414e8bbef2de076d9bcd4d0c9409a6b8de0edd1b0626b7394b063d9e"
+    },
+    "benchmark-e2e": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/benchmark-e2e/SKILL.md",
+      "computedHash": "a5f2242dadce802050f67a6d38447a181dea50988fc87e298422b6d22931670c"
+    },
+    "benchmark-sandbox": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/benchmark-sandbox/SKILL.md",
+      "computedHash": "ca31569caa3da6c3dd9a2375ce1c0aba3285008fbef3016359dfc449bfb7dc06"
+    },
+    "benchmark-testing": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/benchmark-testing/SKILL.md",
+      "computedHash": "3eb528201c9374ca32badebb58e15f64a165fb17a0231d7d7ffbaade610d9a24"
+    },
+    "bootstrap": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/bootstrap/SKILL.md",
+      "computedHash": "70cbd101ab08c006aefe63d6666877a43b12a9968f1a5129a80681cb1250a442"
+    },
+    "cdn-caching": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/cdn-caching/SKILL.md",
+      "computedHash": "8457b991cecd19a2c4d8f9dbcd7fe2faa5d3648144e0ddc827d82aa8f5205932"
+    },
+    "chat-sdk": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/chat-sdk/SKILL.md",
+      "computedHash": "5037099337b89c0b3730ca564ae2bca5896f65e90b64ed167cda0f2a3fe67f8e"
+    },
+    "clerk": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/core/clerk/SKILL.md",
+      "computedHash": "93f74ad69ae27356e994fb25b52dcda0f9d63fff43ed2c52e1de744e98d35599"
+    },
+    "clerk-android": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/mobile/clerk-android/SKILL.md",
+      "computedHash": "c0a7edcc92421abb9471c66937183b82ba587c8335f74bd1f25eedfd200a618c"
+    },
+    "clerk-astro-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-astro-patterns/SKILL.md",
+      "computedHash": "3df12f0c35d649167c3829e2b535fab33a75c7e405eb8379656c8a30fec821d8"
+    },
+    "clerk-backend-api": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/core/clerk-backend-api/SKILL.md",
+      "computedHash": "723ee35b2727923bbc9050c103369985d3d2ced00c9d25d79ff6383a23d8fea9"
+    },
+    "clerk-billing": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/features/clerk-billing/SKILL.md",
+      "computedHash": "8ac867c502c8b7e2a6928ef16a446565c884e027465a0e408e80c8e2ee301e99"
+    },
+    "clerk-chrome-extension-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-chrome-extension-patterns/SKILL.md",
+      "computedHash": "10585eb6da43efe02048c9ed3911850bd9733ae909b62e2662473479e2335cc6"
+    },
+    "clerk-cli": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/core/clerk-cli/SKILL.md",
+      "computedHash": "290991c9f0a714eaa64aca4fb4b49326f05b7973539f062ecb41ffcc09d4cc46"
+    },
+    "clerk-custom-ui": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/core/clerk-custom-ui/SKILL.md",
+      "computedHash": "72dcda42d3755a468049e828180b66c25fb2ac66fd99bd1514699404445924c6"
+    },
+    "clerk-expo": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/mobile/clerk-expo/SKILL.md",
+      "computedHash": "db8101de14305d683ebdee39123ab43041e1f0265b38814812a5e550aa4d14a0"
+    },
+    "clerk-nextjs-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-nextjs-patterns/SKILL.md",
+      "computedHash": "6c5b897dcef62550436b24b3cc9087658dd97c9ca88272ab48a5c094276d72fb"
+    },
+    "clerk-nuxt-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-nuxt-patterns/SKILL.md",
+      "computedHash": "4623d9890b27ad26261fb8821476036b82f91d636c423d19df1557b9db1c5d3c"
+    },
+    "clerk-orgs": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/features/clerk-orgs/SKILL.md",
+      "computedHash": "50a514001d6e1f51dd1bf4e3b0b62336ea5209e36c76be5afe16a4445087124c"
+    },
+    "clerk-react-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-react-patterns/SKILL.md",
+      "computedHash": "9bbc28d1825bda0f31a33660b3e339719bc0ad2a30696dfde14ef6b9493371b0"
+    },
+    "clerk-react-router-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-react-router-patterns/SKILL.md",
+      "computedHash": "929d5912f42a2769f81aa027294a1caec65e0ce83f1f1db47c6df6758c5952bb"
+    },
+    "clerk-setup": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/core/clerk-setup/SKILL.md",
+      "computedHash": "2142fbbf99008c3152e7044730e57d6063b26a9f2523da1fd21a83f6207a2b81"
+    },
+    "clerk-swift": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/mobile/clerk-swift/SKILL.md",
+      "computedHash": "a3648958dfb6b4336627a70a3ec2c46dc7b39712ecd22184ee152583de0672dd"
+    },
+    "clerk-tanstack-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-tanstack-patterns/SKILL.md",
+      "computedHash": "dae6b1764f59c280cc257fc114ff3d2acc186d27537875e3c461650b7addb85d"
+    },
+    "clerk-testing": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/features/clerk-testing/SKILL.md",
+      "computedHash": "3655e0e561d99e41ec06fea0ca39736c3ecbce8e6fb703f0a09373297e56bc82"
+    },
+    "clerk-vue-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frameworks/clerk-vue-patterns/SKILL.md",
+      "computedHash": "f6e57b2cc237d9c2e407800827b2f6984a4bbb9630c6e5c3bfa7657ac3081db6"
+    },
+    "clerk-webhooks": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "skillPath": "skills/features/clerk-webhooks/SKILL.md",
+      "computedHash": "de12deda380be19d32d62c4106a6b78736cd4d9cc6dd5b214f6039853ad89e54"
+    },
+    "deployments-cicd": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/deployments-cicd/SKILL.md",
+      "computedHash": "706d6de6c9c642f0f1370a8e4df96ba174d09d581c240dabc3feb7b365033037"
+    },
+    "env-vars": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/env-vars/SKILL.md",
+      "computedHash": "6609a1465198a97cbb9be4a620d465bf7654f5a2770d02f9f15029ab97623730"
+    },
+    "eve": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/eve/SKILL.md",
+      "computedHash": "746945a30f88639247b6dd2b9a1e8f74a7ec3cfedcefc09f3bd13c466b17a04f"
+    },
+    "knowledge-update": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/knowledge-update/SKILL.md",
+      "computedHash": "8a8516c1c1f6fcaeb4a8c42a7dbbfc9058afebcd50f8be2e012db73c7c9741be"
+    },
+    "marketplace": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/marketplace/SKILL.md",
+      "computedHash": "e35c164ffca739a6f81a18eaab3b32eb3746d194cc96bb48888922db156aacfc"
+    },
+    "microfrontends": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/microfrontends/SKILL.md",
+      "computedHash": "3f22646b2039ad0a8f46162bcea78718b7ad027e6ecba1dfb479d8d1a1083d89"
+    },
+    "next-cache-components": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/next-cache-components/SKILL.md",
+      "computedHash": "f835d8226c28abf012cc013928e2627c8a7a046de61127ef229be1711bd1f255"
+    },
+    "next-forge": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/next-forge/SKILL.md",
+      "computedHash": "665effe26934e4f5db6b554422cefaf0690dc3a89492a3952355369436a4c864"
+    },
+    "next-upgrade": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/next-upgrade/SKILL.md",
+      "computedHash": "e3aeb1f9e8a68d24df0c1c2e3c8ab97ede09a7251a2c76988318d02254346979"
+    },
+    "nextjs": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/nextjs/SKILL.md",
+      "computedHash": "d3a48eada4dbae95856d643a0c9c54a38974ee7896a4d34f93aead13d26c343a"
+    },
+    "plugin-audit": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/plugin-audit/SKILL.md",
+      "computedHash": "37e1ffcabb6c33bf3b4b6380adc065d8b691a50fbc83006754c8bfd51778db31"
+    },
+    "react-best-practices": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "bdb13a3a239c067136b39cf77a34462ccc0dd4645d440362182409dcfd331221"
+    },
+    "release": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/release/SKILL.md",
+      "computedHash": "3e45f726ce978b9529e913ce643b7f59dda3926e11db2ecc8be39012e6530dd4"
+    },
+    "routing-middleware": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/routing-middleware/SKILL.md",
+      "computedHash": "f4579f69978b72086b7f6c00759d7a0d97bf6a8bf3b29964df63b46277143ed9"
+    },
+    "runtime-cache": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/runtime-cache/SKILL.md",
+      "computedHash": "448f9889dc50e212b6781904c1290a5e5a7c832b541aaf6c3d6e22e4801dfe41"
+    },
+    "shadcn": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "computedHash": "4d966b8dbf5b7396ade1c8aeb2f6500aebbee70819110545e9f278b80d2bfdf1"
+    },
+    "turbopack": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/turbopack/SKILL.md",
+      "computedHash": "cd8c2f189adacb88854c20088ab37dfe077cdc0bc1ded3ec3aa4e40be22bcf3c"
+    },
+    "vercel-agent": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-agent/SKILL.md",
+      "computedHash": "9365350432d52dbe4548f9788ebb115e11b9602a25e5d256987ec46d852c137a"
+    },
+    "vercel-cli": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-cli/SKILL.md",
+      "computedHash": "730854ddcfabf771468e6ab83d0a3635b006d5e1ecbcc59b5682e1b14dd1f5de"
+    },
+    "vercel-connect": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-connect/SKILL.md",
+      "computedHash": "978a2bbe1dcd94a7c4cc9d6c66b0737c3cf5952bb7de8adc4c8d28b6991ca31e"
+    },
+    "vercel-firewall": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-firewall/SKILL.md",
+      "computedHash": "347e1ba3b825ca3fcfae9e634cafd73ab940c87f4283f727749a14ff9bca87a9"
+    },
+    "vercel-functions": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-functions/SKILL.md",
+      "computedHash": "356c69e9849ae645d9ecbd141a00e65fd229dbb5c4c9f752fb28744f08b4fbbc"
+    },
+    "vercel-plugin-eval": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/vercel-plugin-eval/SKILL.md",
+      "computedHash": "e3ea30f7ed3fe073b43faa4070c91cdc1c5935e75671a60e823cb39ddbabfe2c"
+    },
+    "vercel-sandbox": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-sandbox/SKILL.md",
+      "computedHash": "c177210aea54ebae282cd225fcda1896942fd0b9adf4e84e961ddd46bca58253"
+    },
+    "vercel-storage": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-storage/SKILL.md",
+      "computedHash": "df01a5a34bf3f9704f76b1753bc6b140e11263368b45e4d57e93a8c9c4000d63"
+    },
+    "verification": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/verification/SKILL.md",
+      "computedHash": "3ce08bac4515127bf090ded58ae0601456329999b4cf520742c406ff05ef7697"
+    },
+    "workflow": {
+      "source": "vercel/vercel-plugin",
+      "sourceType": "github",
+      "skillPath": "skills/workflow/SKILL.md",
+      "computedHash": "4c1ea5144cb0480c84dda24694ab29ffa572f0a2faa733ab8a9fff25586ae099"
+    }
+  }
+}

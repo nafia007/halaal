@@ -1,3 +1,4 @@
+import {ClerkProvider} from "@clerk/nextjs";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "../components/NavBar";
@@ -26,9 +27,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="bg-paper text-ink antialiased">
-        <NavBar />
-        <main>{children}</main>
-        <Footer />
+        <ClerkProvider>
+          <NavBar />
+          <main>{children}</main>
+          <Footer />
+        </ClerkProvider>
       </body>
     </html>
   );

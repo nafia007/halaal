@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { HowItWorksSheet } from "./HowItWorksSheet";
 
 export function NavBar() {
@@ -53,6 +54,17 @@ export function NavBar() {
             >
               Verify a certificate
             </Link>
+            <SignInButton mode="modal">
+              <button className="hidden md:inline-block rounded-full bg-moss px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-moss-dark">
+                Sign in
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button className="hidden md:inline-block rounded-full border border-ink/20 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink/5">
+                Sign up
+              </button>
+            </SignUpButton>
+            <UserButton />
           </div>
         </nav>
       </header>

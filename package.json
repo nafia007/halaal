@@ -2,19 +2,15 @@
   "name": "halaal-platform",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "build": "npm run build --workspace=@halaal/web",
-    "dev": "npm run dev --workspace=@halaal/web",
-    "test": "npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present"
+    "build": "npm run build --prefix apps/web",
+    "dev": "npm run dev --prefix apps/web",
+    "test": "npm run test --prefix apps/web --if-present",
+    "lint": "npm run lint --prefix apps/web --if-present",
+    "typecheck": "npm run typecheck --prefix apps/web --if-present"
   },
   "dependencies": {
-    "next": "14.2.5"
+    "next": "14.2.33"
   },
   "devDependencies": {
     "typescript": "^5.5.4"
